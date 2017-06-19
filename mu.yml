@@ -9,7 +9,7 @@ environments:
     #### Name of EC2 keypair to associate with ECS container instances.
     #### Launches bastion host if defined.
     #### (default: none)
-    keyName: mu-wordpress
+    keyName: treymclabs
 
     #### The instance type to use for the ECS container instances
     #### (default: t2.micro)
@@ -17,7 +17,7 @@ environments:
 
 - name: prod
   cluster:
-    keyName: mu-wordpress
+    keyName: treymclabs
     instanceType: t2.small
 
 ## See https://github.com/stelligent/mu/wiki/Services
@@ -54,11 +54,11 @@ service:
 
     #### RDS engine to use
     #### (default: aurora)
-    #engine: mysql
+    engine: mysql
 
     #### Instance class
     #### (default: db.t2.small)
-    #instanceClass: db.t2.small
+    instanceClass: db.t2.small
 
   ### Environment variables exposed to the containers running in ECS
   environment:
@@ -82,7 +82,7 @@ service:
 
       #### The GitHub repo slug or CodeCommit repo name to build
       #### (default: none)
-      repo: stelligent/mu-wordpress
+      repo: tmcelhattan/mu-wordpress
 
     acceptance:
       #### The environment name to deploy to for testing
